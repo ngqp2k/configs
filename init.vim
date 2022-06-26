@@ -10,8 +10,6 @@ set expandtab
 set clipboard=unnamed
 set splitbelow
 set splitright
-set cursorline
-cd e:\cpp
 
 call plug#begin()
     Plug 'scrooloose/nerdtree'
@@ -24,7 +22,7 @@ call plug#end()
 "----------------Colorscheme---------------------
 let g:gruvbox_contrast_dark='hard'  
 
-colorscheme gruvbox
+"colorscheme gruvbox
 "------------------------------------------------
 
 
@@ -34,6 +32,7 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 let NERDTreeIgnore = ['\.exe$']
+let NERDTreeIgnore = ['\.exe$', '\']
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
 "------------------------------------------------
@@ -51,7 +50,7 @@ let g:NERDToggleCheckAllLines = 1"
 map <C-b> <leader>c<Space>
 
 "------------------Autoload----------------------
-autocmd BufNewFile *.cpp 0r ~/template/main.cpp
+autocmd BufNewFile *.cpp 0r ~/templates/template.cpp
 
 
 " -------------------Bind------------------------
